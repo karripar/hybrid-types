@@ -88,6 +88,12 @@ type TokenContent = Pick<User, 'user_id'> & Pick<UserLevel, 'level_name'>;
 
 type MediaItemWithOwner = MediaItem & Pick<User, 'username'>;
 
+// for upload server
+type FileInfo = {
+  filename: string;
+  user_id: number;
+};
+
 export type {
   UserLevel,
   User,
@@ -103,4 +109,5 @@ export type {
   UserWithNoPassword,
   TokenContent,
   MediaItemWithOwner,
+  FileInfo,
 };
