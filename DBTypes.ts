@@ -57,6 +57,8 @@ type MediaItemTag = {
   tag_id: number;
 };
 
+type TagResult = MediaItemTag & Tag;
+
 type UploadResult = {
   message: string;
   data?: {
@@ -103,6 +105,7 @@ export type {
   Rating,
   Tag,
   MediaItemTag,
+  TagResult,
   UploadResult,
   MostLikedMedia,
   UserWithLevel,
