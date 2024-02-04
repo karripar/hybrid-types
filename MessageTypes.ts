@@ -1,4 +1,5 @@
 import { MediaItem, UserWithNoPassword } from './DBTypes';
+import { Tag } from '@sharedTypes/DBTypes';
 
 type MessageResponse = {
   message: string;
@@ -27,6 +28,10 @@ type UserDeleteResponse = MessageResponse & {
   user: { user_id: number };
 };
 
+type AvailableResponse = Partial<MessageResponse> & {
+  available?: boolean;
+};
+
 // for upload server
 type UploadResponse = MessageResponse & {
   data: {
@@ -44,4 +49,5 @@ export type {
   UploadResponse,
   UserResponse,
   UserDeleteResponse,
+  AvailableResponse,
 };
