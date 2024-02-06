@@ -1,5 +1,4 @@
 import { MediaItem, UserWithNoPassword } from './DBTypes';
-import { Tag } from '@sharedTypes/DBTypes';
 
 type MessageResponse = {
   message: string;
@@ -32,6 +31,10 @@ type AvailableResponse = Partial<MessageResponse> & {
   available?: boolean;
 };
 
+type BooleanResponse = MessageResponse & {
+  success: boolean;
+};
+
 // for upload server
 type UploadResponse = MessageResponse & {
   data: {
@@ -50,4 +53,5 @@ export type {
   UserResponse,
   UserDeleteResponse,
   AvailableResponse,
+  BooleanResponse,
 };
