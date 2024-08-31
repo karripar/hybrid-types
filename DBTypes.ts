@@ -10,8 +10,7 @@ type User = {
   username: string;
   password: string;
   email: string;
-  user_level_id?: number;
-  level_name?: UserLevel['level_name'];
+  user_level_id: number;
   created_at: Date | string;
 };
 
