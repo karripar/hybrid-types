@@ -1,0 +1,19 @@
+{
+  "name": "hybrid-types",
+  "version": "1.0.0",
+  "description": "Types for hybridisovellukset",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilkkamtk/hybrid-types.git"
+  },
+  "author": "Ilkka Kylmäniemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilkkamtk/hybrid-types/issues"
+  },
+  "homepage": "https://github.com/ilkkamtk/hybrid-types#readme"
+}
