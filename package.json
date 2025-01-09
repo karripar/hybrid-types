@@ -2,8 +2,14 @@
   "name": "hybrid-types",
   "version": "1.0.0",
   "description": "Types for hybridisovellukset",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ilkkamtk/hybrid-types/issues"
   },
-  "homepage": "https://github.com/ilkkamtk/hybrid-types#readme"
+  "homepage": "https://github.com/ilkkamtk/hybrid-types#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
