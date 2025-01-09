@@ -4,6 +4,11 @@
   "description": "Types for hybridisovellukset",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./MessageTypes": "./dist/MessageTypes.js",
+    "./DBTypes": "./dist/DBTypes.js"
+  },
   "files": [
     "dist"
   ],
