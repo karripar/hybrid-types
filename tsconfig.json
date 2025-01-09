@@ -11,6 +11,11 @@
     "forceConsistentCasingInFileNames": true,
     "rootDir": "."
   },
-  "include": ["*.ts"],
+  "include": [
+    "*.ts",
+    "src/types/DBTypes.ts",
+    "src/types/index.ts",
+    "src/types/MessageTypes.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

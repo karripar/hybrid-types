@@ -6,22 +6,18 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
     },
-    "./MessageTypes": {
-      "types": "./dist/MessageTypes.d.ts",
-      "default": "./dist/MessageTypes.js"
-    },
-    "./DBTypes": {
-      "types": "./dist/DBTypes.d.ts",
-      "default": "./dist/DBTypes.js"
+    "./*": {
+      "types": "./dist/types/*.d.ts",
+      "default": "./dist/types/*.js"
     }
   },
   "typesVersions": {
     "*": {
       "*": [
-        "dist/*"
+        "dist/types/*"
       ]
     }
   },
