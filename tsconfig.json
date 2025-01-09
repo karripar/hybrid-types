@@ -9,13 +9,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "rootDir": "."
+    "rootDir": "./src"
   },
-  "include": [
-    "*.ts",
-    "src/types/DBTypes.ts",
-    "src/types/index.ts",
-    "src/types/MessageTypes.ts"
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
