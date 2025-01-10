@@ -16,13 +16,13 @@ type MediaItem = {
   media_id: number;
   user_id: number;
   filename: string;
-  thumbnail?: string;
+  thumbnail: string | null;
   filesize: number;
   media_type: string;
   title: string;
   description: string | null;
   created_at: Date | string;
-  screenshots?: string[];
+  screenshots: string[] | null;
 };
 
 type Comment = {
