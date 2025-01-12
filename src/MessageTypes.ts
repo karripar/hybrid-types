@@ -8,10 +8,6 @@ type ErrorResponse = MessageResponse & {
   stack?: string;
 };
 
-type MediaResponse = MessageResponse & {
-  media: MediaItem | MediaItem[];
-};
-
 // for auth server
 type LoginResponse = MessageResponse & {
   token: string;
@@ -47,7 +43,6 @@ type UploadResponse = MessageResponse & {
 export type {
   MessageResponse,
   ErrorResponse,
-  MediaResponse,
   LoginResponse,
   UploadResponse,
   UserResponse,
