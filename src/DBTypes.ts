@@ -22,7 +22,7 @@ type MediaItem = {
   title: string;
   description: string | null;
   created_at: Date | string;
-  screenshots: string[] | null;
+  screenshots: string | null;
 };
 
 type Comment = {
