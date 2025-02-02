@@ -1,6 +1,6 @@
 type UserLevel = {
   level_id: number;
-  level_name: 'Admin' | 'User' | 'Guest';
+  level_name: "Admin" | "User" | "Guest";
 };
 
 type User = {
@@ -10,6 +10,21 @@ type User = {
   email: string;
   user_level_id: number;
   created_at: Date | string;
+};
+
+type Notification = {
+  notification_id: number;
+  user_id: number;
+  notification_text: string;
+  is_read: boolean;
+  notification_type_id: number;
+  is_archived: boolean;
+  created_at: Date | string;
+};
+
+type NotificationType = {
+  notification_type_id: number;
+  notification_type_name: string;
 };
 
 type MediaItem = {
@@ -59,7 +74,6 @@ type MediaItemTag = {
 };
 
 type TagResult = MediaItemTag & Tag;
-
 type UploadResult = {
   message: string;
   data?: {
@@ -69,29 +83,27 @@ type UploadResult = {
 
 type MostLikedMedia = Pick<
   MediaItem,
-  | 'media_id'
-  | 'filename'
-  | 'filesize'
-  | 'media_type'
-  | 'title'
-  | 'description'
-  | 'created_at'
+  | "media_id"
+  | "filename"
+  | "filesize"
+  | "media_type"
+  | "title"
+  | "description"
+  | "created_at"
 > &
-  Pick<User, 'user_id' | 'username' | 'email' | 'created_at'> & {
+  Pick<User, "user_id" | "username" | "email" | "created_at"> & {
     likes_count: bigint;
   };
 
-// type gymnastics to get rid of user_level_id from User type and replace it with level_name from UserLevel type
-type UserWithLevel = Omit<User, 'user_level_id'> &
-  Pick<UserLevel, 'level_name'>;
+type UserWithLevel = Omit<User, "user_level_id"> &
+  Pick<UserLevel, "level_name">;
 
-type UserWithNoPassword = Omit<UserWithLevel, 'password'>;
+type UserWithNoPassword = Omit<UserWithLevel, "password">;
 
-type TokenContent = Pick<User, 'user_id'> & Pick<UserLevel, 'level_name'>;
+type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
 
-type MediaItemWithOwner = MediaItem & Pick<User, 'username'>;
+type MediaItemWithOwner = MediaItem & Pick<User, "username">;
 
-// for upload server
 type FileInfo = {
   filename: string;
   user_id: number;
@@ -114,4 +126,6 @@ export type {
   TokenContent,
   MediaItemWithOwner,
   FileInfo,
+  Notification,
+  NotificationType,
 };

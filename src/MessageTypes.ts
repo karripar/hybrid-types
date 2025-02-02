@@ -1,4 +1,4 @@
-import { MediaItem, UserWithNoPassword } from './DBTypes';
+import { UserWithNoPassword } from './DBTypes';
 
 type MessageResponse = {
   message: string;
