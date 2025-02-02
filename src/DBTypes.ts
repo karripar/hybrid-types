@@ -1,13 +1,15 @@
 type UserLevel = {
-  level_id: number;
+  user_level_id: number;
   level_name: "Admin" | "User" | "Guest";
 };
 
 type User = {
   user_id: number;
   username: string;
-  password: string;
+  password_hash: string;
   email: string;
+  bio: string | null;
+  study_field: string | null;
   user_level_id: number;
   created_at: Date | string;
 };
@@ -27,8 +29,8 @@ type NotificationType = {
   notification_type_name: string;
 };
 
-type MediaItem = {
-  media_id: number;
+type StudyMaterial = {
+  material_id: number;
   user_id: number;
   filename: string;
   thumbnail: string | null;
@@ -68,12 +70,13 @@ type Tag = {
   tag_name: string;
 };
 
-type MediaItemTag = {
-  media_id: number;
+type MaterialTag = {
+  material_tag_id: number;
+  material_id: number;
   tag_id: number;
 };
 
-type TagResult = MediaItemTag & Tag;
+type TagResult = MaterialTag & Tag;
 type UploadResult = {
   message: string;
   data?: {
@@ -81,9 +84,9 @@ type UploadResult = {
   };
 };
 
-type MostLikedMedia = Pick<
-  MediaItem,
-  | "media_id"
+type MostLikedMaterial = Pick<
+  StudyMaterial,
+  | "material_id"
   | "filename"
   | "filesize"
   | "media_type"
@@ -102,7 +105,7 @@ type UserWithNoPassword = Omit<UserWithLevel, "password">;
 
 type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
 
-type MediaItemWithOwner = MediaItem & Pick<User, "username">;
+type MaterialItemWithOwner = StudyMaterial & Pick<User, "username">;
 
 type FileInfo = {
   filename: string;
@@ -112,19 +115,19 @@ type FileInfo = {
 export type {
   UserLevel,
   User,
-  MediaItem,
+  StudyMaterial,
   Comment,
   Like,
   Rating,
   Tag,
-  MediaItemTag,
+  MaterialTag,
   TagResult,
   UploadResult,
-  MostLikedMedia,
+  MostLikedMaterial,
   UserWithLevel,
   UserWithNoPassword,
   TokenContent,
-  MediaItemWithOwner,
+  MaterialItemWithOwner,
   FileInfo,
   Notification,
   NotificationType,
