@@ -91,6 +91,52 @@ type UploadResult = {
   };
 };
 
+type MaterialRating = {
+  material_id: number;
+  title: string;
+  avg_rating: number | null;
+};
+
+type MaterialComment = {
+  material_id: number;
+  title: string;
+  comment_count: number;
+};
+
+type UserActivity = {
+  user_id: number;
+  username: string;
+  material_count: number;
+  comment_count: number;
+  rating_count: number;
+};
+
+type UserNotification = {
+  user_id: number;
+  username: string;
+  notification_count: number;
+  unread_count: number;
+};
+
+type LatestNotification = {
+  notification_id: number;
+  user_id: number;
+  notification_text: string;
+  notification_type_name: string;
+  is_read: boolean;
+  created_at: Date | string;
+  username: string;
+};
+
+type LatestMaterial = {
+  material_id: number;
+  title: string;
+  user_id: number;
+  description: string | null;
+  created_at: Date | string;
+  username: string;
+};
+
 type MostLikedMaterial = Pick<
   StudyMaterial,
   | "material_id"
@@ -139,4 +185,10 @@ export type {
   Notification,
   NotificationType,
   Follow,
+  MaterialComment,
+  UserActivity,
+  UserNotification,
+  LatestNotification,
+  LatestMaterial,
+  MaterialRating,
 };
