@@ -14,6 +14,13 @@ type User = {
   created_at: Date | string;
 };
 
+type Follow = {
+  follow_id: number;
+  follower_id: number;
+  following_id: number;
+  created_at: Date | string;
+};
+
 type Notification = {
   notification_id: number;
   user_id: number;
@@ -131,4 +138,5 @@ export type {
   FileInfo,
   Notification,
   NotificationType,
+  Follow,
 };
