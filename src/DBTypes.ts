@@ -49,6 +49,10 @@ type StudyMaterial = {
   screenshots: string[] | null;
 };
 
+type StudyMaterialWithFollower = StudyMaterial & {
+  follower_id: number;
+};
+
 type Comment = {
   comment_id: number;
   media_id: number;
@@ -191,4 +195,5 @@ export type {
   LatestNotification,
   LatestMaterial,
   MaterialRating,
+  StudyMaterialWithFollower
 };
