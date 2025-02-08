@@ -85,6 +85,13 @@ type Tag = {
   tag_name: string;
 };
 
+type Favorite = {
+  favorite_id: number;
+  user_id: number;
+  material_id: number;
+  created_at: Date | string;
+};
+
 type MaterialTag = {
   material_tag_id: number;
   material_id: number;
@@ -201,4 +208,5 @@ export type {
   MaterialRating,
   StudyMaterialWithFollower,
   UserWithUnhashedPassword,
+  Favorite
 };
