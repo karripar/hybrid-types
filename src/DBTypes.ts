@@ -14,6 +14,10 @@ type User = {
   created_at: Date | string;
 };
 
+type UserWithUnhashedPassword = Omit<User, "password_hash"> & {
+  password: string;
+};
+
 type Follow = {
   follow_id: number;
   follower_id: number;
@@ -195,5 +199,6 @@ export type {
   LatestNotification,
   LatestMaterial,
   MaterialRating,
-  StudyMaterialWithFollower
+  StudyMaterialWithFollower,
+  UserWithUnhashedPassword,
 };
