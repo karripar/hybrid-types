@@ -9,7 +9,6 @@ type User = {
   password_hash: string;
   email: string;
   bio: string | null;
-  study_field: string | null;
   user_level_id: number;
   created_at: Date | string;
 };
@@ -40,11 +39,12 @@ type NotificationType = {
   notification_type_name: string;
 };
 
-type StudyMaterial = {
-  material_id: number;
+type MediaItem = {
+  media_id: number;
   user_id: number;
   filename: string;
   thumbnail: string | null;
+  coordinates_id: number | null;
   filesize: number;
   media_type: string;
   title: string;
@@ -53,7 +53,14 @@ type StudyMaterial = {
   screenshots: string[] | null;
 };
 
-type StudyMaterialWithFollower = StudyMaterial & {
+type Coordinates = {
+  coordinates_id: number;
+  latitude: number;
+  longitude: number;
+  location_name: string;
+};
+
+type MediaItemWithFollower = MediaItem & {
   follower_id: number;
 };
 
@@ -88,17 +95,17 @@ type Tag = {
 type Favorite = {
   favorite_id: number;
   user_id: number;
-  material_id: number;
+  media_id: number;
   created_at: Date | string;
 };
 
-type MaterialTag = {
+type MediaTag = {
   material_tag_id: number;
   material_id: number;
   tag_id: number;
 };
 
-type TagResult = MaterialTag & Tag;
+type TagResult = MediaTag & Tag;
 type UploadResult = {
   message: string;
   data?: {
@@ -106,14 +113,14 @@ type UploadResult = {
   };
 };
 
-type MaterialRating = {
-  material_id: number;
+type MediaRating = {
+  media_id: number;
   title: string;
   avg_rating: number | null;
 };
 
-type MaterialComment = {
-  material_id: number;
+type MediaComment = {
+  media_id: number;
   title: string;
   comment_count: number;
 };
@@ -121,7 +128,7 @@ type MaterialComment = {
 type UserActivity = {
   user_id: number;
   username: string;
-  material_count: number;
+  media_count: number;
   comment_count: number;
   rating_count: number;
 };
@@ -143,8 +150,8 @@ type LatestNotification = {
   username: string;
 };
 
-type LatestMaterial = {
-  material_id: number;
+type LatestMedia = {
+  media_id: number;
   title: string;
   user_id: number;
   description: string | null;
@@ -152,9 +159,9 @@ type LatestMaterial = {
   username: string;
 };
 
-type MostLikedMaterial = Pick<
-  StudyMaterial,
-  | "material_id"
+type MostLikedMedia = Pick<
+  MediaItem,
+  | "media_id"
   | "filename"
   | "filesize"
   | "media_type"
@@ -173,7 +180,7 @@ type UserWithNoPassword = Omit<UserWithLevel, "password_hash">;
 
 type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
 
-type MaterialItemWithOwner = StudyMaterial & Pick<User, "username">;
+type MediaItemWithOwner = MediaItem & Pick<User, "username">;
 
 type FileInfo = {
   filename: string;
@@ -183,30 +190,31 @@ type FileInfo = {
 export type {
   UserLevel,
   User,
-  StudyMaterial,
+  MediaItem,
   Comment,
   Like,
   Rating,
   Tag,
-  MaterialTag,
+  MediaTag,
   TagResult,
   UploadResult,
-  MostLikedMaterial,
+  MediaRating,
   UserWithLevel,
   UserWithNoPassword,
   TokenContent,
-  MaterialItemWithOwner,
+  MediaItemWithOwner,
   FileInfo,
   Notification,
   NotificationType,
   Follow,
-  MaterialComment,
+  Coordinates,
   UserActivity,
   UserNotification,
   LatestNotification,
-  LatestMaterial,
-  MaterialRating,
-  StudyMaterialWithFollower,
+  LatestMedia,
+  MostLikedMedia,
+  MediaItemWithFollower,
   UserWithUnhashedPassword,
-  Favorite
+  Favorite,
+  MediaComment,
 };
