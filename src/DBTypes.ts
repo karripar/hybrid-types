@@ -173,6 +173,20 @@ type MostLikedMedia = Pick<
     likes_count: bigint;
   };
 
+type Credentials = Pick<UserWithUnhashedPassword, "email" | "password">;
+
+type RegisterCredentials = Pick<
+  UserWithUnhashedPassword,
+  "username" | "email" | "password"
+>;
+
+type AuthContextType = {
+  user: UserWithNoPassword | null;
+  handleLogin: (credentials: Credentials) => void;
+  handleLogout: () => void;
+  handleAutoLogin: () => void;
+};
+
 type UserWithLevel = Omit<User, "user_level_id"> &
   Pick<UserLevel, "level_name">;
 
@@ -217,4 +231,7 @@ export type {
   UserWithUnhashedPassword,
   Favorite,
   MediaComment,
+  Credentials,
+  RegisterCredentials,
+  AuthContextType,
 };
