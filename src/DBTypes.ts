@@ -68,6 +68,7 @@ type Comment = {
   comment_id: number;
   media_id: number;
   user_id: number;
+  reference_comment_id: number | null;
   comment_text: string;
   created_at: Date;
 };
