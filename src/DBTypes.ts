@@ -20,8 +20,8 @@ type UserWithUnhashedPassword = Omit<User, "password_hash"> & {
 type Follow = {
   follow_id: number;
   follower_id: number;
-  following_id: number;
-  created_at: Date | string;
+  followed_id: number;
+  created_at?: Date | string;
 };
 
 type Notification = {
