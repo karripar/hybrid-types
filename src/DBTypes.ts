@@ -73,6 +73,10 @@ type Comment = {
   created_at: Date;
 };
 
+type CommentWithUsername = Comment & { username: string };
+
+type CommentWithReplies = Comment & { replies: CommentWithReplies[] };
+
 type Like = {
   like_id: number;
   media_id: number;
@@ -235,4 +239,6 @@ export type {
   Credentials,
   RegisterCredentials,
   AuthContextType,
+  CommentWithUsername,
+  CommentWithReplies,
 };
