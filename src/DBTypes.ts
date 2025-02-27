@@ -77,6 +77,9 @@ type CommentWithUsername = Comment & { username: string };
 
 type CommentWithReplies = CommentWithUsername & { replies: CommentWithReplies[] };
 
+type CommentWithUsernameAndReplies = CommentWithUsername & { replies: CommentWithUsername[] };
+
+
 type Like = {
   like_id: number;
   media_id: number;
@@ -241,4 +244,5 @@ export type {
   AuthContextType,
   CommentWithUsername,
   CommentWithReplies,
+  CommentWithUsernameAndReplies,
 };
