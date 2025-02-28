@@ -216,7 +216,7 @@ type MediaResponse = {
 
 type TagResponse = {
   message: string;
-  tags: string[];
+  tags: Tag[];
 };
 
 export type {
