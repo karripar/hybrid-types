@@ -209,6 +209,11 @@ type FileInfo = {
   user_id: number;
 };
 
+type MediaResponse = {
+  message: string;
+  media_id: number;
+};
+
 export type {
   UserLevel,
   User,
@@ -245,4 +250,5 @@ export type {
   CommentWithUsername,
   CommentWithReplies,
   CommentWithUsernameAndReplies,
+  MediaResponse,
 };
