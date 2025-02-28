@@ -214,6 +214,11 @@ type MediaResponse = {
   media_id: number;
 };
 
+type TagResponse = {
+  message: string;
+  tags: string[];
+};
+
 export type {
   UserLevel,
   User,
@@ -251,4 +256,5 @@ export type {
   CommentWithReplies,
   CommentWithUsernameAndReplies,
   MediaResponse,
+  TagResponse,
 };
