@@ -75,10 +75,13 @@ type Comment = {
 
 type CommentWithUsername = Comment & { username: string };
 
-type CommentWithReplies = CommentWithUsername & { replies: CommentWithReplies[] };
+type CommentWithReplies = CommentWithUsername & {
+  replies: CommentWithReplies[];
+};
 
-type CommentWithUsernameAndReplies = CommentWithUsername & { replies: CommentWithUsername[] };
-
+type CommentWithUsernameAndReplies = CommentWithUsername & {
+  replies: CommentWithUsername[];
+};
 
 type Like = {
   like_id: number;
@@ -221,6 +224,11 @@ type TagResponse = {
   tags: Tag[];
 };
 
+type EditedProfile = {
+  username: string;
+  bio: string;
+};
+
 export type {
   UserLevel,
   User,
@@ -260,4 +268,5 @@ export type {
   MediaResponse,
   TagResponse,
   UserWithNoSensitiveInfo,
+  EditedProfile,
 };
