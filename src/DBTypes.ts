@@ -198,6 +198,8 @@ type AuthContextType = {
 type UserWithLevel = Omit<User, "user_level_id"> &
   Pick<UserLevel, "level_name">;
 
+type UserWithNoSensitiveInfo = Omit<UserWithNoPassword, "email">;
+
 type UserWithNoPassword = Omit<UserWithLevel, "password_hash">;
 
 type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
@@ -257,4 +259,5 @@ export type {
   CommentWithUsernameAndReplies,
   MediaResponse,
   TagResponse,
+  UserWithNoSensitiveInfo,
 };
