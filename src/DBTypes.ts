@@ -205,6 +205,10 @@ type UserWithNoSensitiveInfo = Omit<UserWithNoPassword, "email">;
 
 type UserWithNoPassword = Omit<UserWithLevel, "password_hash">;
 
+type UserWithProfilePicture = UserWithNoPassword & {
+  filename: string;
+};
+
 type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
 
 type MediaItemWithOwner = MediaItem & Pick<User, "username">;
@@ -279,4 +283,5 @@ export type {
   UserWithNoSensitiveInfo,
   EditedProfile,
   ProfilePicture,
+  UserWithProfilePicture,
 };
