@@ -229,6 +229,15 @@ type EditedProfile = {
   bio: string;
 };
 
+type ProfilePicture = {
+  profile_picture_id: number;
+  user_id: number;
+  filename: string;
+  media_type: string;
+  filesize: number;
+  created_at: Date | string;
+};
+
 export type {
   UserLevel,
   User,
@@ -269,4 +278,5 @@ export type {
   TagResponse,
   UserWithNoSensitiveInfo,
   EditedProfile,
+  ProfilePicture,
 };
