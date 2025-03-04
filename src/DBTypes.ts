@@ -215,7 +215,7 @@ type MediaItemWithOwner = MediaItem & Pick<User, "username">;
 
 // mediaitemwithowner + profile_picture
 type MediaItemWithProfilePicture = MediaItemWithOwner & {
-  filename: string;
+  profile_picture: string;
 };
 
 type FileInfo = {
