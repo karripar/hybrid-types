@@ -213,6 +213,11 @@ type TokenContent = Pick<User, "user_id"> & Pick<UserLevel, "level_name">;
 
 type MediaItemWithOwner = MediaItem & Pick<User, "username">;
 
+// mediaitemwithowner + profile_picture
+type MediaItemWithProfilePicture = MediaItemWithOwner & {
+  filename: string;
+};
+
 type FileInfo = {
   filename: string;
   user_id: number;
@@ -284,4 +289,5 @@ export type {
   EditedProfile,
   ProfilePicture,
   UserWithProfilePicture,
+  MediaItemWithProfilePicture,
 };
