@@ -44,7 +44,6 @@ type MediaItem = {
   user_id: number;
   filename: string;
   thumbnail: string | null;
-  coordinates_id: number | null;
   filesize: number;
   media_type: string;
   title: string;
@@ -53,12 +52,6 @@ type MediaItem = {
   screenshots: string[] | null;
 };
 
-type Coordinates = {
-  coordinates_id: number;
-  latitude: number;
-  longitude: number;
-  location_name: string;
-};
 
 type MediaItemWithFollower = MediaItem & {
   follower_id: number;
@@ -267,7 +260,6 @@ export type {
   Notification,
   NotificationType,
   Follow,
-  Coordinates,
   UserActivity,
   UserNotification,
   LatestNotification,
